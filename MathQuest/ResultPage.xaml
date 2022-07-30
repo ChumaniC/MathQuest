@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathQuest.ResultPage">
+    <ContentPage.Content>
+        <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <ScrollView>
+                <StackLayout Margin="5">
+                    <Frame BackgroundColor="PowderBlue" Padding="24" CornerRadius="0">
+                        <Label Text="Game Over"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontSize="40" />
+                    </Frame>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Correct Answers:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblCorrect"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Incorrect Answers:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label  x:Name="lblIncorrect"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Timed Out:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label  x:Name="lblTimedOut"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Easy Questions:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblEasy"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Intermediate Questions:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblInter"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Hard Questions:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblHard"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Expert Questions:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblExpert"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Grid>
+                        <Label Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Total Time:"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                        <Label x:Name="lblGameTime"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Start">
+                        </Label>
+                    </Grid>
+                    <Button x:Name="btnYes"
+                        Grid.Column="0"
+                       Grid.Row="1"
+                        Text="Play Again"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        Background="PowderBlue"
+                        TextColor="White"
+                            Clicked="OnYesClick"
+                        >
+                    </Button>
+                    <Button x:Name="btnNo"
+                        Grid.Column="1"
+                       Grid.Row="1"
+                        Text="Go Home"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        Background="PaleVioletRed"
+                        TextColor="White"
+                            Clicked="OnNoClick">
+                    </Button>
+                </StackLayout>
+            </ScrollView>
+
+
+            <!--Popup Area Difficulty Level-->
+            <ContentView x:Name="popupSelectLevelView" BackgroundColor="LightGray" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ScrollView>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <StackLayout Orientation="Vertical" HeightRequest="480" WidthRequest="300" BackgroundColor="White">
+
+                            <Label x:Name="lblPopUptitle"
+                            Text="Select difficulty"
+                               BackgroundColor="#C0808080"
+                               Padding="0,10,0,10"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                               FontSize="Title" />
+                            <Label x:Name="lblPopUpbody"
+                            Text="Select your math skill level"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="Body"
+                               Padding="0,0,0,10" />
+                            <Button x:Name="btnEasy"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Easy"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnInter"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Intermediate"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnHard"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Hard"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnExpert"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Expert"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnCancel"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Cancel"
+                                Clicked="OnButtonQuit"
+                                    BackgroundColor="PaleVioletRed"
+                                ></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </ContentView>
+            <!--Popup Area Quit Game-->
+            <ContentView x:Name="popupQuitView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ScrollView>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <StackLayout Orientation="Vertical" HeightRequest="280" WidthRequest="300" BackgroundColor="White">
+
+                            <Label x:Name="_lblPopUptitle"
+                            Text="Quit"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                               FontSize="Title" />
+                            <Label x:Name="_lblPopUpBody"
+                            Text="Are you sure you want to quit game?"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="Body" />
+                            <Button
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Yes"
+                                Clicked="OnNoClick"
+                                    BackgroundColor="PaleGreen"
+                                ></Button>
+                            <Button
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="No"
+                                Clicked="onNoSelection"
+                                    BackgroundColor="PaleVioletRed"
+                                ></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

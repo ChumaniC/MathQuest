@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathQuest.LandingPage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label Text="MathQuest"
+                   TextColor="DarkSlateGray"
+                   FontSize="90"
+                   AbsoluteLayout.LayoutBounds="1,0,400,400"   
+           AbsoluteLayout.LayoutFlags="XProportional,YProportional"/>
+            <Image x:Name="imgLanding" 
+                Source="logo.png" 
+                            AbsoluteLayout.LayoutBounds="0.5,0.5,400,300"   
+           AbsoluteLayout.LayoutFlags="XProportional,YProportional"
+                   HeightRequest="200"
+                   WidthRequest="200"/>
+            <Button Text="New Game"
+                        FontSize="30"
+                    Background="LightBlue"
+                    Clicked="OnNewGameClicked"
+                             AbsoluteLayout.LayoutBounds="0.5,0.9,500,50"   
+           AbsoluteLayout.LayoutFlags="XProportional,YProportional"/>
+            <Label  HorizontalTextAlignment="Center"
+                   FontSize="Subtitle"
+                Text="v 1"
+                    FontAttributes="Bold"
+                         AbsoluteLayout.LayoutBounds="1,1,420,30"   
+           AbsoluteLayout.LayoutFlags="XProportional,YProportional">
+            </Label>
+
+
+            <!--Popup Area Difficulty Level-->
+            <ContentView x:Name="popupSelectLevelView" BackgroundColor="LightGray" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <ScrollView>
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <StackLayout Orientation="Vertical" HeightRequest="410" WidthRequest="300" BackgroundColor="White">
+
+                            <Label x:Name="lblPopUpTitle"
+                            Text="New Game"
+                               BackgroundColor="#C0808080"
+                               Padding="0,10,0,10"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                               FontSize="Title" />
+                            <Label x:Name="_lblPopUpBody"
+                            Text="Select your math skill level"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="Body" 
+                               Padding="0,0,0,10"/>
+                            <Button x:Name="btnEasy"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Easy"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnInter"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Intermediate"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnHard"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Hard"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnExpert"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Expert"
+                                Clicked="OnStartGame"
+                                    BackgroundColor="CadetBlue"
+                                ></Button>
+                            <Button x:Name="btnCancel"
+                                Margin="5"
+                                    HorizontalOptions="FillAndExpand"
+                                Text="Cancel"
+                                Clicked="OnCancelClicked"
+                                    BackgroundColor="PaleVioletRed"
+                                ></Button>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
